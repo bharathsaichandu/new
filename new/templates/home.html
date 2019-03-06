@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}home page{% endblock title%}
+{% block content %}
+
+{% if user.is_authenticated %}
+  <h2>Welcome, {{ user.username }}!</h2>
+
+    <div class="container">
+  <div class="jumbotron">
+        <a href="{% url 'house_list' %}">
+    <div>
+         Shared rooms
+    </div>
+        </a>
+      <a href="{% url 'privateroomlist' %}">
+    <div>
+        Private rooms
+    </div>
+        </a>
+      <a href="{% url 'entirehouselist' %}">
+    <div>
+        Entire House
+    </div>
+        </a>
+  </div>
+</div>
+
+
+{% else %}
+        <a href="{% url 'login' %}">login</a> / <a href="{% url 'signup' %}">signup</a>
+<div class="container">
+  <div class="jumbotron">
+    <h2>Please, login to view all our services.</h2>
+  </div>
+</div>
+      {% endif %}
+
+
+
+{% endblock %}

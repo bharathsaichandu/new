@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block title %}list of questions{% endblock title%}
+ {% block style%}
+#gender{
+ width:250px;
+}
+{% endblock style %}
+{% block content %}
+{% load staticfiles%}
+
+<script>
+
+
+</script>
+<form method="get" action="">
+
+    <input type="text" name="city" placeholder="city" value="{{request.GET.city}}" style="width:200px;height:30px;"/>
+        <input type="text" name="area" placeholder="area" value="{{request.GET.area}}" style="width:200px;height:30px;"/>
+    <select name="gender" value="{{request.GET.gender}}"id="gender" style="width:100px;height:30px;">
+    <option value="boys">boys</option>
+    <option value="girls">girls</option>
+    <option value="family">Family</option>
+    <option value="any">Any</option>
+  </select>
+    <select name="rent" value="{{request.GET.rent}}" id="rent" style="width:140px;height:30px;">
+    <option value="small">₹3000-₹5000</option>
+    <option value="medium">₹5000-₹10000</option>
+    <option value="more">₹10000-₹20000</option>
+    <option value="lot">₹20000+</option>
+  </select>
+    <input type="submit" id="modal" value="search">
+
+</form>
+
+
+<div class="col-sm-8 col-sm-offset-2">
+
+
+{% for instance in object_list %}
+<div class="row" >
+
+    <div class="col-sm-12">
+        <a href="{{instance.get_absolute_url}}">
+    <div class="thumbnail">
+      <!--img src="..." alt="...">-->
+
+         {% if instance.image1 %}
+            <img src="{{instance.image1.url}}"  class="img-responsive" />
+    {% elif   instance.image2 %}
+        <img src="{{instance.image2.url}}"  class="img-responsive" />
+     {% elif   instance.image3 %}
+        <img src="{{instance.image3.url}}"  class="img-responsive" />
+     {% elif   instance.image4 %}
+        <img src="{{instance.image4.url}}"  class="img-responsive" />
+     {% elif   instance.image5 %}
+        <img src="{{instance.image5.url}}"  class="img-responsive" />
+     {% elif   instance.image6 %}
+        <img src="{{instance.image6.url}}"  class="img-responsive" />
+
+
+    {% else %}
+   <img src="{% static 'noimage.png' %}"  class="img-responsive" />
+        {% endif %}
+
+        <div class="row">
+<div class="col-sm-9 col-sm-offset-1">
+
+<h4>{{instance.bed_rooms}}B{{instance.hall}}H{{instance.kitchen}}K Private Rooms for {{instance.gender}} at ₹{{instance.rent}} in {{instance.Area}}, {{instance.City}}</h4>
+
+</div ></div>
+
+      <div  class="caption"  >
+        <h3><small> {{instance.timestamp|timesince}} ago</small></h3>
+
+
+       </div>
+    </div>
+        </a>
+        <hr/>
+    </div>
+
+</div>
+
+{% endfor %}
+<div class="pagination">
+    <span class="step-links">
+        {% if object_list.has_previous %}
+            <a href="?{{page_request_var}}=1&{{ query}}"> first</a>
+            <a href="?{{page_request_var}}={{ object_list.previous_page_number }}&{{ query}}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+        </span>
+
+        {% if object_list.has_next %}
+
+            <a href="?{{page_request_var}}={{ object_list.next_page_number }}&{{ query}}">next</a>
+            <a href="?{{page_request_var}}={{ object_list.paginator.num_pages }}&{{ query}}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+
+</div>
+{% endblock %}
+
+
+
+

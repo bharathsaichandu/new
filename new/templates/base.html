@@ -1,0 +1,221 @@
+{% load staticfiles %}
+<!--DOCTYPE html-->
+
+<html lang="en">
+<head>
+    <style>
+a:link {
+  text-decoration: none;
+}
+
+div.inputgap
+{
+padding-left:30%
+
+}
+
+ul {
+   list-style:none;
+   padding
+}
+    body {
+  background: #dcdcdc;
+  color: #333333;
+  margin-top: 5rem;
+}
+.btn{min-width:200px; min-height:50px; background-color:#ffffff;}
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+.dropdown-menu{width:200px;}
+ul {
+  margin: 0;
+}
+
+.bg-steel {
+  background-color: #5f788a;
+}
+
+.site-header .navbar-nav .nav-link {
+
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #A3A3A3;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+ul.dropdown-menu {
+    background-color: #5f788a;
+}
+.content-section {
+  width:700px;
+  background: #ffffff;
+  padding: 20px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  margin-left:200px;
+  background-color:#F5FFFA;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+label {
+    /* Other styling.. */
+    text-align: right;
+    clear: both;
+    float:left;
+    margin-right:15px;
+}
+    </style>
+
+   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+    <style> {% block style%}{% endblock style %} </style>
+    <script>{% block script %}{% endblock %}</script>
+</head>
+<body>
+<header>
+  <h1 >RENTAL MANAGEMENT SYSTEM</h1>
+<!--  {% if user.is_authenticated %}
+  <a href="{% url 'logout' %}">logout</a>
+  {% else %}
+  <a href="{% url 'login' %}">login</a> / <a href="{% url 'signup' %}">signup</a>
+  {% endif %}
+  <hr>-->
+</header>
+
+<!--{% include "message_display.html" %}
+-->
+
+
+<header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+            <ul class="nav navbar-nav navbar-left">
+        <li class="nav-item">  <a class="nav-item nav-link"  href="{% url 'home' %}">Home</a>
+        </li></ul>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+
+            <!-- Navbar Right Side -->
+            <ul class="nav navbar-nav navbar-right">
+              {% if user.is_authenticated %}
+               <li class="nav-item">
+                   <div class="dropdown">
+    <button class="btn  dropdown-toggle " type="button" data-toggle="dropdown" >POST HOUSE DETAILS
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a class="nav-item nav-link"  href="{% url 'sharedroompost' %}">Shared Room</a></li>
+      <li><a class="nav-item nav-link" href="{% url 'privateroompost' %}">Private Room</a></li>
+      <li><a class="nav-item nav-link" href="{% url 'entirehousepost' %}">Entire House</a></li>
+    </ul>
+  </div>
+
+               <!--    <a class="nav-item nav-link" href="{% url 'ask_question' %}">New Post</a>    </li>
+-->
+                <li class="nav-item"><a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>    </li>
+
+                <li class="nav-item"><a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>    </li>
+
+              {% else %}
+                <li class="nav-item"><a class="nav-item nav-link" href="{% url 'login' %}">Login</a>    </li>
+
+                <li class="nav-item"><a class="nav-item nav-link" href="{% url 'signup' %}">Register</a>    </li>
+
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <br/> <br/> <br/>
+    <main role="main" class="container">
+      <div class="row">
+        <div class="col-md-8">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+          {% block content %}{% endblock %}
+        </div>
+<!--
+        <div class="col-md-3">
+          <div class="content-section">
+            <h3>Our Sidebar</h3>
+            <p class='text-muted'>You can put any information here you'd like.
+              <ul class="list-group">
+                <li class="list-group-item list-group-item-light">Latest Posts</li>
+                <li class="list-group-item list-group-item-light">Announcements</li>
+                <li class="list-group-item list-group-item-light">Calendars</li>
+                <li class="list-group-item list-group-item-light">etc</li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      -->
+      </div>
+
+    </main>
+
+
+</body>
+</html>
+
+
+
+<!-- Latest compiled and minified JavaScript -->

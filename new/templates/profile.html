@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% load staticfiles%}
+
+{% block content %}
+    <div class="content-section">
+      <div class="media">
+          <div class="media-left">
+              {% if user.profile %}
+        <img class="img-circle" height="100" width="100" src="{{ user.profile.image.url }}">
+              {% else %}
+               <img class="img-circle" height="100" width="100" src="{% static 'default.png' %}">
+              {% endif %}
+          </div>
+        <div class="media-body">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-muted">{{ user.email }}</p>
+
+        </div>
+      </div>
+
+    </div>
+{% for instance in query1 %}
+<div class="row" >
+
+    <div class="col-sm-12">
+        <a href="{{instance.get_absolute_url}}">
+    <div class="thumbnail">
+      <!--img src="..." alt="...">-->+
+
+         {% if instance.image1 %}
+            <img src="{{instance.image1.url}}"  class="img-responsive" style="width:500px;height:400px;" />
+    {% elif   instance.image2 %}
+        <img src="{{instance.image2.url}}"  class="img-responsive" style="width:500px;height:400px;"/>
+     {% elif   instance.image3 %}
+        <img src="{{instance.image3.url}}"  class="img-responsive" style="width:500px;height:400px;" />
+     {% elif   instance.image4 %}
+        <img src="{{instance.image4.url}}"  class="img-responsive" style="width:500px;height:400px;"/>
+     {% elif   instance.image5 %}
+        <img src="{{instance.image5.url}}"  class="img-responsive" style="width:500px;height:400px;"/>
+     {% elif   instance.image6 %}
+        <img src="{{instance.image6.url}}"  class="img-responsive" style="width:500px;height:400px;"/>
+
+
+    {% else %}
+   <img src="{% static 'noimage.png' %}"  class="img-responsive" style="width:500px;height:400px;"/>
+        {% endif %}
+
+        <div class="row">
+<div class="col-sm-9 col-sm-offset-1">
+
+<h4>{{instance.bed_rooms}}B{{instance.hall}}H{{instance.kitchen}}K Sharing Rooms for {{instance.gender}} at ₹{{instance.rent}} in {{instance.Area}}, {{instance.City}}</h4>
+
+</div ></div>
+
+      <div  class="caption"  >
+        <h3><small> {{instance.timestamp|timesince}} ago</small></h3>
+
+
+       </div>
+    </div>
+        </a>
+        <hr/>
+    </div>
+
+</div>
+
+{% endfor %}
+{% for instance in query2 %}
+<div class="row" >
+
+    <div class="col-sm-12">
+        <a href="{{instance.get_absolute_url}}">
+    <div class="thumbnail">
+      <!--img src="..." alt="...">-->
+
+         {% if instance.image1 %}
+            <img src="{{instance.image1.url}}"  class="img-responsive" style="width:500px;height:400px;" />
+    {% elif   instance.image2 %}
+        <img src="{{instance.image2.url}}"  class="img-responsive" style="width:500px;height:400px;"/>
+     {% elif   instance.image3 %}
+        <img src="{{instance.image3.url}}"  class="img-responsive" style="width:500px;height:400px;" />
+     {% elif   instance.image4 %}
+        <img src="{{instance.image4.url}}"  class="img-responsive" style="width:500px;height:400px;"/>
+     {% elif   instance.image5 %}
+        <img src="{{instance.image5.url}}"  class="img-responsive" style="width:500px;height:400px;"/>
+     {% elif   instance.image6 %}
+        <img src="{{instance.image6.url}}"  class="img-responsive" style="width:500px;height:400px;"/>
+
+
+    {% else %}
+   <img src="{% static 'noimage.png' %}"  class="img-responsive" style="width:500px;height:400px;"/>
+        {% endif %}
+        <div class="row">
+<div class="col-sm-9 col-sm-offset-1">
+
+<h4>{{instance.bed_rooms}}B{{instance.hall}}H{{instance.kitchen}}K Sharing Rooms for {{instance.gender}} at ₹{{instance.rent}} in {{instance.Area}}, {{instance.City}}</h4>
+
+</div ></div>
+
+      <div  class="caption"  >
+        <h3><small> {{instance.timestamp|timesince}} ago</small></h3>
+
+
+       </div>
+    </div>
+        </a>
+        <hr/>
+    </div>
+
+</div>
+
+{% endfor %}
+{% for instance in query3 %}
+<div class="row" >
+
+    <div class="col-sm-12">
+        <a href="{{instance.get_absolute_url}}">
+    <div class="thumbnail">
+      <!--img src="..." alt="...">-->
+
+        {% if instance.image1 %}
+            <img src="{{instance.image1.url}}"  class="img-responsive" style="width:500px;height:400px;" />
+    {% elif   instance.image2 %}
+        <img src="{{instance.image2.url}}"  class="img-responsive" style="width:500px;height:400px;"/>
+     {% elif   instance.image3 %}
+        <img src="{{instance.image3.url}}"  class="img-responsive" style="width:500px;height:400px;" />
+     {% elif   instance.image4 %}
+        <img src="{{instance.image4.url}}"  class="img-responsive" style="width:500px;height:400px;"/>
+     {% elif   instance.image5 %}
+        <img src="{{instance.image5.url}}"  class="img-responsive" style="width:500px;height:400px;"/>
+     {% elif   instance.image6 %}
+        <img src="{{instance.image6.url}}"  class="img-responsive" style="width:500px;height:400px;"/>
+
+
+    {% else %}
+   <img src="{% static 'noimage.png' %}"  class="img-responsive" style="width:500px;height:400px;"/>
+        {% endif %}
+
+        <div class="row">
+<div class="col-sm-9 col-sm-offset-1">
+
+<h4>{{instance.bed_rooms}}B{{instance.hall}}H{{instance.kitchen}}K Sharing Rooms for {{instance.gender}} at ₹{{instance.rent}} in {{instance.Area}}, {{instance.City}}</h4>
+
+</div ></div>
+
+      <div  class="caption"  >
+        <h3><small> {{instance.timestamp|timesince}} ago</small></h3>
+
+
+       </div>
+    </div>
+        </a>
+        <hr/>
+    </div>
+
+</div>
+
+{% endfor %}
+
+{% endblock content %}

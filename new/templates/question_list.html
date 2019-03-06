@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}list of questions{% endblock title%}
+ {% block style%}
+
+{% endblock style %}
+{% block content %}
+<form method="get" action="">
+
+    <input type="text" name="city" placeholder="city" value="{{request.GET.city}}"/>
+        <input type="text" name="area" placeholder="area" value="{{request.GET.area}}"/>
+    <input type="submit" value="search/">
+
+</form>
+<div class="col-sm-8 col-sm-offset-2">
+
+
+{% for instance in object_list %}
+<div class="row" >
+    <div class="col-sm-12">
+    <div class="thumbnail">
+      <!--img src="..." alt="...">-->
+        {% if instance.image %}
+    <img src="{{instance.image.url}}"  class="img-responsive" />
+    {% endif %}
+
+      <div  class="caption"  >
+        <h3><a href="{{instance.get_absolute_url}}"> {{instance.title|truncatechars:20}}  </a><small>{{instance.timestamp|timesince}} ago</small></h3>
+
+        <p>{{instance.description|linebreaks|truncatechars:50}}</p>
+        <p> <a href="{{instance.get_absolute_url}}" class="btn btn-info" role="button">Button</a></p>
+      </div>
+    </div>
+        <br/><hr/><br/>
+    </div>
+
+
+</div>
+
+{% endfor %}
+<div class="pagination">
+    <span class="step-links">
+        {% if object_list.has_previous %}
+            <a href="?{{page_request_var}}=1">&laquo; first</a>
+            <a href="?{{page_request_var}}={{ object_list.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ object_list.number }} of {{ object_list.paginator.num_pages }}.
+        </span>
+
+        {% if object_list.has_next %}
+            <a href="?{{page_request_var}}={{ object_list.next_page_number }}">next</a>
+            <a href="?{{page_request_var}}={{ object_list.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+</div>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,294 @@
+
+{% extends 'base.html' %}
+{% load urlify %}
+{% block title %}{{object.title}}{% endblock title%}
+{% block style %}
+a:link {
+  text-decoration: none;
+}
+.border {
+
+  border: 1px solid red;
+}
+* {
+  box-sizing: border-box;
+}
+.sticky {
+  position: fixed;
+  top: 10%;
+  left:50%;
+ right:10%;
+  width: 50%;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+float:right;
+}
+{% endblock style %}
+{% block content %}
+{% load staticfiles%}
+
+{% if value %}
+<a href="{% url 'sharedroompostedit'  object.id  %}" class="button">update</a>
+
+{% endif %}
+
+<div class="col-sm-11     col-sm-offset-1">
+
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        {% for i in range %}
+        {% if i == one %}
+      <li data-target="#myCarousel" data-slide-to="{{i}}" class="active"></li>
+        {%else%}
+      <li data-target="#myCarousel" data-slide-to="{{i}}"></li>
+      {% endif %}
+        {%endfor%}
+    </ol>
+
+    <div class="carousel-inner">
+        {% for i in a %}
+
+        {% if forloop.counter == 1 %}
+      <div class="item active">
+        <img src="{{i}}" class="img-thumbnail"  class="img-rounded"  style="width:1000px;height:400px;" />
+      </div>
+        {% else %}
+      <div class="item">
+        <img src="{{i}}" class="img-thumbnail"  class="img-rounded" style="width:1000px;height:400px;"  />
+      </div>
+      {%endif%}
+        {%endfor%}
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+<div class="row">
+<div class="col-sm-9 col-sm-offset-1">
+
+<h3>{{object.bed_rooms}}B{{object.hall}}H{{object.kitchen}}K Sharing Rooms for {{object.gender}} at ₹{{object.rent}} in {{object.Area}}, {{object.City}}</h3>
+
+    <!--
+    <h1>{{object.City}} <small>{{object.timestamp}}</small></h1>
+
+    {{object.area|truncatechars:20|urlify}}
+    -->
+
+    <!--
+    {{share_string}}-->
+</div ></div>
+<br/>
+
+<div class="row">
+<div class="col-sm-5 col-sm-offset-1"  style="border: 1px solid LightGray;    padding: 20px;">
+
+<br/><br/>
+    <h3>   <bold>House Features</bold></h3>
+    <div class="row">
+  <div class="column">
+    <img border="0" alt="linkedin" src="{% static 'bed.png' %}" class="img-rounded" width="100" height="100">
+  </div>
+         <div class="column">
+    <img border="0" alt="linkedin" src="{% static 'bathroom.png' %}" class="img-rounded" width="100" height="100">
+  </div>
+    </div>
+
+    <div class="row">
+  <div class="column">
+      {% if object.bed_rooms >= 2 %}
+<span>{{object.bed_rooms}} bed rooms</span>
+      {% else %}
+      <span>{{object.bed_rooms}} bed room</span>
+      {% endif %}
+
+  </div>
+         <div class="column">
+             {% if object.bathrooms >= 2 %}
+             <span>{{object.bathrooms}} bath rooms</span>
+             {% else %}
+              <span>{{object.bathrooms}} bath room</span>
+             {% endif %}
+  </div>
+    </div>
+    <div class="row">
+  <div class="column">
+    <img border="0" alt="linkedin" src="{% static 'sqft.png' %}" class="img-rounded" width="100" height="100">
+  </div>
+         <div class="column">
+    <img border="0" alt="linkedin" src="{% static 'furniture.png' %}" class="img-rounded" width="100" height="100">
+  </div>
+    </div>
+    <div class="row">
+  <div class="column">
+      <span>
+          House Area
+{{object.Area_sqft}} sq. ft
+      </span>
+  </div>
+         <div class="column">
+             <span>{{object.Furniture}} Furnished Home</span>
+
+  </div>
+    </div>
+    </div>
+    <div class="col-sm-5 col-sm-offset-1"   style="border: 1px solid LightGray;  height:440px;  padding: 20px;" >
+<br/><br/>
+    <h3>share on</h3>
+        <br/>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}" data-toggle="tooltip" title="facebook">
+            <img border="0" alt="facebook" src="{% static 'facebook.png' %}"  class="img-rounded" width="30" height="30">facebook
+</a>
+<br/><br/>
+</a>
+    <a href="https://twitter.com/home?status={{object.descriptiom|urlify}}%20{{request.build_absolute_uri}}" data-toggle="tooltip" title="twitter">
+<img border="0" alt="twitter" src="{% static 'twiter.png' %}"  class="img-rounded" width="30" height="30">twitter
+
+</a>
+        <br/><br/>
+    <a href='https://plus.google.com/share?url={{request.build_absolute_uri}}'data-toggle="tooltip" title="google plus" >
+
+        <img border="0" alt="twitter" src="{% static 'google plus.png' %}" class="img-rounded" width="30" height="30">Google plus
+
+    </a>
+        <br/><br/>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url={{request.build_absolute_uri}}&
+title={{object.title}}&summary={{object.descriptiom|urlify}}&
+source={{request.build_absolute_uri}}" data-toggle="tooltip" title="linkedin">
+ <img border="0" alt="linkedin" src="{% static 'linkedin.png' %}" class="img-rounded" width="30" height="30">linked in
+</a>
+        <br/><br/>
+    <a href="http://www.reddit.com/submit?url={{request.build_absolute_uri}}&title={{object.descriptiom|urlify}}">Reddit</a>
+<br/>
+    </div>
+</div>
+<div class="col-sm-5 col-sm-offset-1">
+<br/>
+</div>
+                <br/>
+<div class="row">
+<div class="col-sm-5 col-sm-offset-1" style="border: 1px solid LightGray;  height:250px;  padding: 20px;" >
+
+        <div class="row">
+    <h3>   <bold>Essential Amenities</bold></h3>
+
+            {% if lenofessential == 0 %}
+             <span>no essential amenities</span>
+            {% else %}
+            {% for day in essential %}
+
+            {{ day }}<br/>
+            {% endfor %}
+{% endif %}
+        </div>
+    <br/>
+</div>
+<!--
+</div>
+
+<div class="col-sm-6 col-sm-offset-1">
+<br/>
+</div>
+<br/>
+<div class="row">-->
+    <div class="col-sm-5 col-sm-offset-1" style="border: 1px solid LightGray;  height:250px;  padding: 20px;" >
+
+        <div class="row">
+    <h3>   <bold>Optional Amenities</bold></h3>
+
+            {% if lenofoptional == 0 %}
+             <span>no optional amenities</span>
+            {% else %}
+            {% for day in optional %}
+
+            {{ day }}<br/>
+            {% endfor %}
+{% endif %}
+        </div>
+    <br/>
+</div>
+</div>
+<div class="col-sm-5 col-sm-offset-1" style="display: none;">
+
+
+<p>{% if object.description %}{{object.description|linebreaks}}<br/>
+    {% else %}coming soon{% endif %}</p>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
+</script>
+<script>
+window.onscroll = function() {myFunction()};
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+</div>
+<br/>
+<div class="row">
+    <div class="col-sm-11 col-sm-offset-1" style="border: 1px solid LightGray;    padding: 20px;" >
+
+        <div class="row">
+    <h3>   <bold>Rent Details</bold></h3>
+
+           <span><bold>Monthly rent</bold> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    ₹{{object.rent}}</span>
+            <br/>
+            <span><bold>Security Deposit</bold> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{object.securitydeposit}} months rent</span>
+        </div>
+    <br/>
+</div>
+</div>
+<br/>
+<div class="row">
+    <div class="col-sm-11 col-sm-offset-1" style="border: 1px solid LightGray;    padding: 20px; overflow: auto;" >
+
+        <div class="row"  >
+    <h3>   <bold>Contact Details</bold></h3>
+
+           <span><bold>Owner name</bold> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{object.user}}</span>
+            <br/>
+            <span><bold>Owner email</bold> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{object.email}} </span><br/>
+            <span><bold>Address</bold> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{object.Address}} </span>
+
+        </div>
+    <br/>
+</div>
+</div>
+<p></p>
+{% endblock %}
