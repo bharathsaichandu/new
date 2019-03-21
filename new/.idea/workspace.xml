@@ -37,29 +37,86 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/new/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
-              <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+              <caret line="160" selection-start-line="160" selection-end-line="160" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="manage.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/manage.py">
+      <file leaf-file-name="house_detail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/house_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+            <state relative-caret-position="4879">
+              <caret line="287" selection-start-line="287" selection-end-line="287" />
+              <folding>
+                <element signature="e#1448#1482#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/new/urls.py">
+      <file leaf-file-name="privateroomdetail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/privateroomdetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
+            <state relative-caret-position="4879">
+              <caret line="287" column="139" selection-start-line="287" selection-start-column="139" selection-end-line="287" selection-end-column="139" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/forum/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2261">
+              <caret line="145" column="53" selection-start-line="145" selection-start-column="53" selection-end-line="145" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/forum/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3213">
+              <caret line="196" column="31" selection-start-line="196" selection-start-column="31" selection-end-line="196" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="entirehouselist.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/entirehouselist.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1139">
+              <caret line="67" column="79" selection-start-line="67" selection-start-column="79" selection-end-line="67" selection-end-column="79" />
+              <folding>
+                <element signature="n#style#0;n#input#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#1;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#0;n#form#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#select#1;n#form#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="entirehousedetail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/entirehousedetail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="286" selection-start-line="286" selection-end-line="286" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/forum/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="12869">
+              <caret line="770" selection-end-line="770" />
             </state>
           </provider>
         </entry>
@@ -135,7 +192,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
     <option name="width" value="1346" />
@@ -146,7 +203,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -157,12 +213,13 @@
             <path>
               <item name="new" type="b2602c69:ProjectViewProjectNode" />
               <item name="new" type="462c0819:PsiDirectoryNode" />
-              <item name="new" type="462c0819:PsiDirectoryNode" />
+              <item name="forum" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -208,7 +265,7 @@
     <option name="totallyTimeSpent" value="2619000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.2373512" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -241,33 +298,33 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.2373512" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="1" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32843137" />
       <window_info id="UI Designer" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info active="true" anchor="bottom" id="Terminal" order="9" visible="true" weight="0.27124184" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
       <window_info id="Capture Tool" order="4" />
-      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Database" order="6" />
       <window_info anchor="right" id="Maven Projects" order="8" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,6 +343,13 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/new/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/new/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2550">
@@ -478,43 +542,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/entirehouselist.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
+        <state relative-caret-position="1139">
           <caret line="67" column="79" selection-start-line="67" selection-start-column="79" selection-end-line="67" selection-end-column="79" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#1;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#0;n#form#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#select#1;n#form#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/forum/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="72" column="124" selection-start-line="72" selection-start-column="124" selection-end-line="72" selection-end-column="124" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/entirehousedetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="45" column="1" lean-forward="true" selection-start-line="33" selection-end-line="45" selection-end-column="1" />
+        <state relative-caret-position="3213">
+          <caret line="196" column="31" selection-start-line="196" selection-start-column="31" selection-end-line="196" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/forum/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1213">
-          <caret line="143" column="13" selection-start-line="143" selection-start-column="4" selection-end-line="143" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/forum/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="567" column="21" lean-forward="true" selection-start-line="567" selection-start-column="21" selection-end-line="567" selection-end-column="21" />
+        <state relative-caret-position="2261">
+          <caret line="145" column="53" selection-start-line="145" selection-start-column="53" selection-end-line="145" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/house_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="73" column="69" selection-start-line="73" selection-start-column="69" selection-end-line="73" selection-end-column="103" />
+        <state relative-caret-position="4879">
+          <caret line="287" selection-start-line="287" selection-end-line="287" />
+          <folding>
+            <element signature="e#1448#1482#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -534,8 +596,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/privateroomdetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="54" column="11" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
+        <state relative-caret-position="4879">
+          <caret line="287" column="139" selection-start-line="287" selection-start-column="139" selection-end-line="287" selection-end-column="139" />
         </state>
       </provider>
     </entry>
@@ -602,6 +664,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/new/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="160" selection-start-line="160" selection-end-line="160" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/manage.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -609,10 +678,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/new/settings.py">
+    <entry file="file://$PROJECT_DIR$/templates/entirehousedetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="160" lean-forward="true" selection-start-line="160" selection-end-line="160" />
+        <state relative-caret-position="126">
+          <caret line="286" selection-start-line="286" selection-end-line="286" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/forum/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="12869">
+          <caret line="770" selection-end-line="770" />
         </state>
       </provider>
     </entry>
